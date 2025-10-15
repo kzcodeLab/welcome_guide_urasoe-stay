@@ -1,0 +1,1663 @@
+﻿
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kobashigawa Urasoe Inn | Welcome Guide</title>
+    <meta property="og:title" content="Kobashigawa Urasoe Inn | Welcome Guide" />
+    <meta
+      property="og:description"
+      content="到着から退去までのステップを3タップ以内で確認できるゲスト向けハウスガイドです。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="images/OGP.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f8fb;
+        --card-bg: #ffffff;
+        --accent: #0b5c90;
+        --accent-light: rgba(11, 92, 144, 0.08);
+        --text: #1d2733;
+        --muted: #4f5d6f;
+        --border: #d8dde6;
+        --radius: 18px;
+        --shadow: 0 18px 38px rgba(31, 41, 55, 0.1);
+        --section-spacing: clamp(2.5rem, 4vw, 3.5rem);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+          "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      .page-wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 clamp(1.2rem, 5vw, 2.4rem);
+      }
+
+      nav {
+        background: #ffffff;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        box-shadow: 0 6px 24px rgba(31, 41, 55, 0.06);
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.6rem clamp(1.2rem, 5vw, 2.4rem);
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      .brand {
+        font-size: clamp(1rem, 3.5vw, 1.25rem);
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: var(--accent);
+      }
+
+      #nav-toggle {
+        display: none;
+      }
+
+      .nav-toggle-label {
+        display: none;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 0.45rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        font-size: 0.9rem;
+        cursor: pointer;
+        background: var(--card-bg);
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 0.45rem 0.85rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.88rem;
+        color: var(--muted);
+        font-weight: 500;
+        transition: background 0.2s, color 0.2s;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        background: var(--accent-light);
+        color: var(--accent);
+      }
+
+      header.hero {
+        padding: 3.5rem 0 2.5rem;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.1rem, 6vw, 3.2rem);
+        margin: 0;
+        letter-spacing: 0.08em;
+      }
+
+      .hero p {
+        margin: 1rem auto 0;
+        max-width: 30rem;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      section {
+        margin-bottom: var(--section-spacing);
+      }
+
+      .section-header {
+        margin-bottom: 1.5rem;
+      }
+
+      .section-header h2 {
+        margin: 0;
+        font-size: clamp(1.45rem, 4vw, 1.9rem);
+        letter-spacing: 0.04em;
+      }
+
+      .section-header span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-top: 0.25rem;
+      }
+
+      .section-card {
+        background: var(--card-bg);
+        border-radius: var(--radius);
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+        padding: clamp(1.2rem, 3vw, 1.8rem);
+      }
+
+      .grid-two {
+        display: grid;
+        gap: clamp(1rem, 3vw, 1.6rem);
+      }
+
+      @media (min-width: 900px) {
+        .grid-two {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          align-items: stretch;
+        }
+      }
+
+      .info-stack {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .info-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: clamp(1rem, 3vw, 1.4rem);
+        background: #ffffff;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+      }
+
+      .info-card h3 {
+        margin: 0 0 0.7rem;
+        font-size: 1rem;
+        letter-spacing: 0.06em;
+        color: var(--accent);
+        text-transform: uppercase;
+      }
+
+      .info-card p {
+        margin: 0.4rem 0 0;
+      }
+
+      .info-card .lang-block:not(:first-of-type) {
+        margin-top: 1.6rem;
+      }
+
+      .address-list p {
+        margin: 0.35rem 0;
+        font-size: 0.98rem;
+      }
+
+      .info-card a.button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.55rem 1.1rem;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: background 0.2s;
+      }
+
+      .info-card a.button:hover,
+      .info-card a.button:focus-visible {
+        background: #094066;
+      }
+
+      .photo-stack {
+        display: grid;
+        gap: 1rem;
+        align-content: stretch;
+      }
+
+      .photo-slot {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        min-height: clamp(220px, 32vw, 320px);
+        background: #e6ecf3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .photo-slot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .map-stack {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .map-image,
+      .map-embed {
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        min-height: clamp(210px, 30vw, 280px);
+      }
+
+      .map-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .map-embed iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .map-stack.equal {
+        grid-auto-rows: 1fr;
+      }
+
+      .map-stack.equal > * {
+        min-height: clamp(240px, 35vw, 320px);
+      }
+
+      .travel-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: clamp(1rem, 3vw, 1.4rem);
+        background: #fff;
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .travel-card h3 {
+        margin: 0;
+        font-size: 1.05rem;
+        letter-spacing: 0.06em;
+        color: var(--accent);
+      }
+
+      .travel-card p {
+        margin: 0.25rem 0 0;
+      }
+
+      .travel-card .lang-block + .lang-block {
+        margin-top: 0.7rem;
+      }
+
+      .travel-card .lang-block p {
+        margin: 0.25rem 0;
+      }
+
+      .bus-layout {
+        display: grid;
+        gap: clamp(1rem, 3vw, 1.4rem);
+      }
+
+      .bus-info {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: clamp(1rem, 3vw, 1.4rem);
+        background: #fff;
+      }
+
+      .bus-info h3 {
+        margin: 0 0 0.6rem;
+        font-size: 1.05rem;
+        color: var(--accent);
+        letter-spacing: 0.06em;
+      }
+
+      .bus-info .lang-block {
+        margin-bottom: 1rem;
+      }
+
+      .bus-info .lang-block:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .bus-info .lang-block p {
+        margin: 0.25rem 0;
+      }
+
+      .bus-route-card {
+        background: #fff;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        padding: clamp(1rem, 3vw, 1.5rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: clamp(260px, 40vw, 320px);
+      }
+
+      .route-flow {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        position: relative;
+        padding-left: 1.4rem;
+      }
+
+      .route-flow::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 4px;
+        bottom: 4px;
+        width: 2px;
+        background: var(--accent);
+        opacity: 0.3;
+      }
+
+      .route-step {
+        position: relative;
+      }
+
+      .route-step::before {
+        content: "";
+        position: absolute;
+        left: -1.4rem;
+        top: 0.3rem;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .route-step h4 {
+        margin: 0;
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .route-step p {
+        margin: 0.25rem 0 0;
+      }
+
+      .checkin-layout {
+        display: grid;
+        gap: 1.1rem;
+      }
+
+      .checkin-info {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .checkin-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: clamp(1rem, 3vw, 1.4rem);
+      }
+
+      .checkin-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.05rem;
+        color: var(--accent);
+        letter-spacing: 0.06em;
+      }
+
+      .checkin-card ul {
+        margin: 0.5rem 0 0;
+        padding-left: 1.1rem;
+      }
+
+      .checkin-card li {
+        margin-bottom: 0.45rem;
+      }
+
+      .checkin-card .lang-gap {
+        height: 1.4rem;
+      }
+
+      .alert-note {
+        margin-top: 0.9rem;
+        border-radius: var(--radius);
+        background: var(--accent-light);
+        padding: 0.85rem 1rem;
+        font-size: 0.92rem;
+      }
+
+      .photo-pair {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .photo-pair .photo-slot {
+        min-height: clamp(200px, 28vw, 280px);
+      }
+
+      .rules-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .rule-item {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: clamp(1rem, 3vw, 1.4rem);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      }
+
+      .rule-item h3 {
+        margin: 0 0 0.6rem;
+        font-size: 1.05rem;
+        color: var(--accent);
+      }
+
+      .rule-item .lang-block + .lang-block {
+        margin-top: 0.75rem;
+      }
+
+      .rule-item .lang-block p {
+        margin: 0.22rem 0;
+      }
+
+      .waste-grid {
+        display: grid;
+        gap: 1.1rem;
+      }
+
+      .waste-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: clamp(1rem, 3vw, 1.4rem);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      }
+
+      .waste-card h3 {
+        margin: 0 0 0.75rem;
+        font-size: 1.05rem;
+        color: var(--accent);
+      }
+
+      .waste-illustration {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: #ffffff;
+        padding: clamp(0.4rem, 1.2vw, 0.8rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .waste-illustration img {
+        width: 100%;
+        max-width: 520px;
+        height: auto;
+        display: block;
+      }
+
+      .waste-illustration.slim,
+      .waste-illustration.medium,
+      .waste-illustration.short {
+        min-height: 0;
+      }
+
+      @media (min-width: 960px) {
+        .waste-illustration {
+          padding: 0;
+        }
+
+        .waste-illustration img {
+          max-width: none;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        .waste-illustration.slim {
+          min-height: 160px;
+        }
+
+        .waste-illustration.medium {
+          min-height: 240px;
+        }
+
+        .waste-illustration.short {
+          min-height: 150px;
+        }
+      }
+
+      .waste-illustration.slim {
+        min-height: 110px;
+      }
+
+      .waste-illustration.medium {
+        min-height: 200px;
+      }
+
+      .waste-illustration.short {
+        min-height: 100px;
+      }
+
+      @media (max-width: 600px) {
+        .waste-illustration.slim {
+          min-height: 95px;
+        }
+
+        .waste-illustration.medium {
+          min-height: 180px;
+        }
+
+        .waste-illustration.short {
+          min-height: 90px;
+        }
+      }
+
+      .waste-card .lang-block {
+        margin-top: 0.85rem;
+      }
+
+      .waste-card .lang-block p {
+        margin: 0.2rem 0;
+      }
+
+      .waste-card .lang-block + .lang-block {
+        margin-top: 0.9rem;
+      }
+
+      .appliance-stack {
+        display: grid;
+        gap: 1.1rem;
+      }
+
+      .appliance-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: clamp(1rem, 3vw, 1.4rem);
+        display: grid;
+        gap: 1rem;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+      }
+
+      @media (min-width: 680px) {
+        .appliance-card {
+          grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+          align-items: stretch;
+        }
+      }
+
+      .appliance-photos {
+        display: grid;
+        gap: 0.85rem;
+        justify-items: center;
+      }
+
+      .appliance-photos img {
+        width: min(100%, 360px);
+        height: auto;
+        max-height: 320px;
+        object-fit: contain;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        padding: clamp(0.6rem, 1.4vw, 1rem);
+        background: #ffffff;
+        display: block;
+      }
+
+      @media (min-width: 900px) {
+        .appliance-photos img {
+          width: min(100%, 420px);
+          max-height: 360px;
+        }
+      }
+
+      .appliance-content h3 {
+        margin: 0 0 0.6rem;
+        font-size: 1.05rem;
+        color: var(--accent);
+      }
+
+      .appliance-content ul {
+        margin: 0.5rem 0 0;
+        padding-left: 1.1rem;
+      }
+
+      .appliance-content ul + ul {
+        margin-top: 1.4rem;
+      }
+
+      .appliance-content li {
+        margin-bottom: 0.35rem;
+      }
+
+      .label-explainer {
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+        background: var(--accent-light);
+        padding: 0.6rem 0.8rem;
+        border-radius: 12px;
+      }
+
+      footer {
+        margin-top: var(--section-spacing);
+        padding: 2.4rem clamp(1.2rem, 5vw, 2.4rem);
+        background: #0f253b;
+        color: #edf2f7;
+      }
+
+      footer p {
+        margin: 0.4rem 0;
+      }
+
+      footer .footer-note {
+        margin-top: 1.4rem;
+        font-size: 0.85rem;
+        color: rgba(237, 242, 247, 0.7);
+      }
+
+      @media (max-width: 920px) {
+        .nav-links {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .nav-inner {
+          flex-wrap: wrap;
+        }
+
+        .nav-toggle-label {
+          display: inline-flex;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background: #ffffff;
+          border-radius: var(--radius);
+          border: 1px solid var(--border);
+          padding: 0.75rem;
+        }
+
+        #nav-toggle:checked ~ .nav-links {
+          display: flex;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .photo-slot,
+        .photo-pair .photo-slot {
+          min-height: 210px;
+        }
+
+        .map-stack.equal > * {
+          min-height: 220px;
+        }
+
+        .bus-route-card {
+          min-height: 240px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <input type="checkbox" id="nav-toggle" />
+        <label class="nav-toggle-label" for="nav-toggle">Menu</label>
+        <ul class="nav-links">
+          <li><a href="#location">宿の場所 ・ Location</a></li>
+          <li><a href="#airport">那覇空港から宿までの行き方 ・ From Naha Airport</a></li>
+          <li><a href="#bus">バス利用 ・ By Bus ・ 搭乘公車</a></li>
+          <li><a href="#checkin">チェックイン・チェックアウト ・ Check-in &amp; Check-out</a></li>
+          <li><a href="#rules">ハウスルール ・ House Rules ・ 房屋規則</a></li>
+          <li><a href="#waste">ゴミの分別方法 ・ Waste Sorting</a></li>
+          <li><a href="#appliance">室内の設備機器の使い方 ・ Appliance &amp; Device Guide</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero page-wrap">
+      <h1>WELCOME GUIDE</h1>
+      <p>この度は予約いただきありがとうございます。</p>
+    </header>
+
+    <main class="page-wrap">
+      <section id="location">
+        <div class="section-header">
+          <h2>1：宿の場所 ・ Location</h2>
+          <span>到着前の不安を解消できるよう、住所・地図・駐車場をまとめました。</span>
+        </div>
+
+        <div class="grid-two">
+          <div class="info-stack">
+            <div class="info-card">
+              <h3>住所 / Address / 地址</h3>
+              <div class="address-list">
+                <p>沖縄県浦添市勢理客3丁目1-41（郵便番号 901-2122）</p>
+                <p>3-1-41 Jicchaku, Urasoe City, Okinawa 901-2122 Japan</p>
+                <p>日本沖繩縣浦添市勢理客3丁目1-41（郵遞區號 901-2122）</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <h3>Google マップ</h3>
+              <p>Googleマップを開いてルートをご確認ください。</p>
+              <a
+                class="button"
+                href="https://www.google.com/maps/search/?api=1&query=26.241054,127.69442"
+                target="_blank"
+                rel="noopener"
+              >
+                Google Mapsで開く
+              </a>
+              <p style="margin-top: 0.75rem; font-size: 0.95rem">
+                位置情報: <code>26.241054, 127.6944108</code>
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>駐車場 ・ Parking ・ 停車</h3>
+              <div class="lang-block">
+                <p>
+                  建物前には普通車2台分の駐車スペースがあります。大型車の場合は1台のみ駐車可能です。駐車の際は壁・フェンスに接触しないよう低速で操作し、歩道や車道にはみ出さない位置にまっすぐ停めてください。
+                </p>
+              </div>
+              <div class="lang-block">
+                <p>
+                  There is parking space for two standard-sized vehicles in front of the building. Only one large vehicle can be parked. When parking, maneuver slowly to avoid contact with walls or fences, and park straight in a position that does not encroach onto the sidewalk or roadway.
+                </p>
+              </div>
+              <div class="lang-block">
+                <p>
+                  建築物前方設有可停放兩輛普通轎車的停車空間。若為大型車輛，僅能停放一輛。停車時請以低速操作避免觸碰牆壁或圍欄，並將車輛直線停放於不侵佔人行道或車道的位置。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="photo-stack">
+            <div class="photo-slot">
+              <img src="images/house1.png" alt="Exterior view of Kobashigawa Urasoe Inn" />
+            </div>
+            <div class="photo-slot">
+              <img src="images/house2.png" alt="Parking space at Kobashigawa Urasoe Inn" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="airport">
+        <div class="section-header">
+          <h2>2：那覇空港から宿までの行き方 ・ From Naha Airport</h2>
+          <span>レンタカー・タクシーでお越しの場合のルートをまとめています。</span>
+        </div>
+
+        <div class="grid-two">
+          <div class="info-stack">
+            <div class="travel-card">
+              <h3>レンタカー</h3>
+              <div class="lang-block">
+                <p>那覇空港から国道58号線を北上し、勢理客交差点を右折。約20分で到着します。</p>
+                <p>空港付近は渋滞しやすいため、余裕を持ったスケジュールでお越しください。</p>
+              </div>
+              <div class="lang-block">
+                <p>Head north on Route 58 from Naha Airport and turn right at Jicchaku intersection. The drive takes about 20 minutes.</p>
+                <p>Traffic can be heavy around the airport, so allow extra travel time.</p>
+              </div>
+              <div class="lang-block">
+                <p>從那霸機場沿國道58號線北行，於勢理客十字路口右轉。約20分鐘即可抵達。</p>
+                <p>機場周邊易發生交通壅塞，請預留充足時間規劃行程。</p>
+              </div>
+            </div>
+
+            <div class="travel-card">
+              <h3>タクシー</h3>
+              <div class="lang-block">
+                <p>那覇空港国内線ターミナルから約20〜25分、料金の目安は2,200〜2,800円です。</p>
+              </div>
+              <div class="lang-block">
+                <p>Ride from the Domestic Terminal takes about 20〜25 minutes. Fare estimate: JPY 2,200〜2,800.</p>
+              </div>
+              <div class="lang-block">
+                <p>從國內線航廈搭乘計程車約20～25分鐘，車資約2,200～2,800日圓。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-stack equal">
+            <div class="map-image">
+              <img src="images/googlemap.png" alt="Driving route from Naha Airport to Kobashigawa Urasoe Inn" />
+            </div>
+            <div class="map-embed">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.6347799383607!2d127.69183587541653!3d26.24105397705393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56bc7aa6a1709%3A0xb4134df62df6d343!2z44CSOTAxLTIxMjIg5rKW57iE55yM5rWm5re75biC5Yui55CG5a6i77yT5LiB55uu77yR4oiS77yU77yR!5e0!3m2!1sja!2sjp!4v1759971025908!5m2!1sja!2sjp"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="bus">
+        <div class="section-header">
+          <h2>3：バス利用 ・ By Bus ・ 搭乘公車</h2>
+          <span>乗り換えのないルートを中心にまとめています。</span>
+        </div>
+
+        <div class="grid-two bus-layout">
+          <div class="bus-info">
+            <h3>空港発の直通ルート</h3>
+            <div class="lang-block">
+              <p>
+                空港から宿までの行き方は複数ありますが、本ガイドでは「乗り換えなし」の経路を優先してご紹介しています。最新の運行状況は各事業者サイトや地図アプリでご確認ください。
+              </p>
+            </div>
+            <div class="lang-block">
+              <p>
+                国内線ターミナル3番のりばから120番（名護西空港線）に乗車し、「勢理客」で下車します（所要約20〜35分・渋滞状況により変動）。バス停から宿（浦添市勢理客3-1-41）までは徒歩約5分です。
+              </p>
+            </div>
+            <div class="lang-block">
+              <p>
+                Board Route 120 (Nago West Airport Line) at Domestic Terminal stop #3, ride to “Jicchaku” (approx. 20〜35 min depending on traffic). Walk about 5 minutes to 3-1-41 Jicchaku.
+              </p>
+            </div>
+            <div class="lang-block">
+              <p>
+                在國內線航廈3號乘車處搭乘120路（名護西機場線），於「實着」站下車（約20～35分鐘，視交通情況而定）。從公車站步行約5分鐘即可抵達浦添市勢理客3-1-41。
+              </p>
+            </div>
+          </div>
+
+          <div class="bus-route-card">
+            <div class="route-flow">
+              <div class="route-step">
+                <h4>出発 / Departure / 出發</h4>
+                <p>国内線ターミナル3番のりば → 120番（名護西空港線）</p>
+                <p>Board at Domestic Terminal Stop #3 → Route 120</p>
+                <p>於國內線航廈3號乘車 → 120路（名護西機場線）</p>
+              </div>
+              <div class="route-step">
+                <h4>乗車 / On Board / 乘車</h4>
+                <p>「勢理客」で下車（約20〜35分・渋滞状況により変動）</p>
+                <p>Get off at “Jicchaku” (20〜35 min depending on traffic)</p>
+                <p>於「實着」下車（約20～35分鐘，視交通情況而定）</p>
+              </div>
+              <div class="route-step">
+                <h4>徒歩 / Walk / 步行</h4>
+                <p>バス停から宿（浦添市勢理客3-1-41）まで徒歩約5分</p>
+                <p>Walk 5 minutes to 3-1-41 Jicchaku, Urasoe</p>
+                <p>步行約5分鐘抵達浦添市勢理客3-1-41</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="checkin">
+        <div class="section-header">
+          <h2>4：チェックイン・チェックアウト ・ Check-in &amp; Check-out</h2>
+          <span>セルフチェックイン／チェックアウトの流れです。</span>
+        </div>
+
+        <div class="grid-two checkin-layout">
+          <div class="checkin-info">
+            <div class="checkin-card">
+              <h3>鍵の受け取り ・ Getting the Key ・ 領取鑰匙</h3>
+              <p>チェックイン：16:00以降 / Check-in: After 4:00 PM / 入住：下午4點後</p>
+              <p>チェックアウト：11:00まで / Check-out: By 11:00 AM / 退房：上午11點前</p>
+              <p>
+                鍵の受け取り：玄関横のキーボックスを使用します。暗証番号はチェックインまでにお知らせします。開かない場合はその場からメッセージにてご連絡ください。
+              </p>
+              <p>
+                Key Pickup: Use the key box next to the entrance. We will provide the access code before check-in. If it does not open, please contact us via message from that location.
+              </p>
+              <p>
+                鑰匙領取方式：請使用玄關旁的鑰匙箱。密碼將於入住前告知。若無法開啟，請立即透過訊息聯繫我們。
+              </p>
+              <div class="alert-note">
+                <p>滞在中も鍵を携帯し、外出時は玄関の施錠を確認してください。</p>
+                <p>紛失には十分注意してください。</p>
+                <p>深夜の出入りは近隣に配慮して静かにお願いします。</p>
+                <p>
+                  Keep the key with you during your stay and lock the door whenever you head out. Please avoid losing it and be mindful of noise late at night.
+                </p>
+                <p>
+                  住宿期間也請隨身攜帶鑰匙，外出時確認鎖好玄關。請妥善保管，深夜進出時務必放低音量。
+                </p>
+              </div>
+            </div>
+
+            <div class="checkin-card">
+              <h3>セルフチェックアウト手順 ・ Checkout Steps ・ 退房流程</h3>
+              <ul>
+                <li>チェックアウトは11:00までにお願いいたします。</li>
+                <li>室内の電気・エアコン・家電の電源をOFFにします。</li>
+                <li>使用した食器は洗浄し、乾かして元の場所へ戻してください。</li>
+                <li>ゴミは分別した状態で室内の指定場所にまとめてください。</li>
+                <li>鍵をキーボックスに戻し、暗証番号をランダムにして扉を閉めます。</li>
+              </ul>
+              <div class="lang-gap"></div>
+              <ul>
+                <li>Check-out time is by 11:00 AM.</li>
+                <li>Turn off lights, air-conditioners, and appliances.</li>
+                <li>Wash, dry, and store tableware.</li>
+                <li>Leave sorted trash in the indoor collection spot.</li>
+                <li>Return the key to the key box, scramble the dials, and close it.</li>
+              </ul>
+              <div class="lang-gap"></div>
+              <ul>
+                <li>退房時間為上午11:00前。</li>
+                <li>關閉燈光、空調與電器。</li>
+                <li>清洗並歸位餐具。</li>
+                <li>垃圾請分類後集中放在室內指定位置。</li>
+                <li>將鑰匙放回鑰匙箱，轉亂密碼並關緊。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="photo-pair">
+            <div class="photo-slot">
+              <span style="color: var(--muted)">Key box photo (coming soon)</span>
+            </div>
+            <div class="photo-slot">
+              <span style="color: var(--muted)">Return photo (coming soon)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="rules">
+        <div class="section-header">
+          <h2>5：ハウスルール ・ House Rules ・ 房屋規則</h2>
+          <span>快適で安全な滞在のため、ご一読ください。</span>
+        </div>
+
+        <div class="rules-grid">
+          <div class="rule-item">
+            <h3>玄関について / Entrance / 玄關</h3>
+            <div class="lang-block">
+              <p>玄関で必ず靴を脱ぎ、室内ではスリッパをご利用ください。</p>
+            </div>
+            <div class="lang-block">
+              <p>Please take off your shoes at the entrance and use the indoor slippers provided.</p>
+            </div>
+            <div class="lang-block">
+              <p>請在玄關脫鞋，室內請使用提供的室內拖鞋。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>小さなお子様について / Children / 兒童安全</h3>
+            <div class="lang-block">
+              <p>お子様から目を離さず、壁への落書きや転倒などがないようご配慮ください。</p>
+            </div>
+            <div class="lang-block">
+              <p>Please keep an eye on children to prevent wall scribbling or accidents.</p>
+            </div>
+            <div class="lang-block">
+              <p>請照看兒童，避免在牆上塗鴉或發生意外。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>トイレの使い方 / Toilet Use / 廁所使用</h3>
+            <div class="lang-block">
+              <p>トイレットペーパー以外は流さず、紙おむつ等はゴミ箱へ捨ててください。常に清潔に保ちましょう。</p>
+            </div>
+            <div class="lang-block">
+              <p>Do not flush anything except toilet paper. Dispose of diapers, sanitary products, and tissues in the trash bin and keep the toilet clean.</p>
+            </div>
+            <div class="lang-block">
+              <p>請勿將衛生紙以外的物品沖入馬桶。紙尿布、衛生用品與面紙請丟入垃圾桶，並保持清潔。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>外出時のお願い / When Leaving / 外出時注意</h3>
+            <div class="lang-block">
+              <p>外出時は照明・エアコン・家電をすべてOFFにして、省エネルギーにご協力ください。</p>
+            </div>
+            <div class="lang-block">
+              <p>Turn off all lights, air-conditioners, and appliances when you go out to help us save energy.</p>
+            </div>
+            <div class="lang-block">
+              <p>外出時請關閉所有燈光、空調與電器，以節省能源。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>禁煙 / No Smoking / 禁菸</h3>
+            <div class="lang-block">
+              <p>室内・バルコニーは全面禁煙です。喫煙が発覚した場合は特別清掃費（16,500円）をご請求します。</p>
+            </div>
+            <div class="lang-block">
+              <p>
+                Smoking is strictly prohibited inside and on the balcony. A special cleaning fee of JPY 16,500 will be charged if smoking is detected.
+              </p>
+            </div>
+            <div class="lang-block">
+              <p>室內與陽台全面禁菸，如有違反將酌收特別清潔費16,500日圓。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>ペット / Pets / 寵物</h3>
+            <div class="lang-block">
+              <p>ペットの同伴はお断りしております。</p>
+            </div>
+            <div class="lang-block">
+              <p>Pets are not allowed.</p>
+            </div>
+            <div class="lang-block">
+              <p>禁止攜帶寵物入住。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>パーティー・イベント / Parties &amp; Events / 聚會活動</h3>
+            <div class="lang-block">
+              <p>室内でのパーティーや大人数の集まりは禁止です。近隣への迷惑行為がないようご協力ください。</p>
+            </div>
+            <div class="lang-block">
+              <p>Parties or large gatherings are not allowed. Please avoid disturbing neighbors.</p>
+            </div>
+            <div class="lang-block">
+              <p>禁止在室內舉辦派對或大型聚會，請避免打擾鄰居。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>騒音 / Noise / 噪音</h3>
+            <div class="lang-block">
+              <p>静粛時間は22:00〜翌8:00です。声量やテレビ・音楽の音量にご配慮ください。</p>
+            </div>
+            <div class="lang-block">
+              <p>Quiet hours are from 10:00 PM to 8:00 AM. Please keep voices, TV, and music volume low.</p>
+            </div>
+            <div class="lang-block">
+              <p>安靜時段為22:00至次日8:00。請控制說話、電視及音樂音量。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>ゴミ出し / Garbage / 垃圾處理</h3>
+            <div class="lang-block">
+              <p>ゴミは分別して備え付けのゴミ箱へ。大量のゴミが出た場合はホストまでご連絡ください。</p>
+            </div>
+            <div class="lang-block">
+              <p>Separate waste and dispose of it in the designated bins. Contact the host if you have excessive trash.</p>
+            </div>
+            <div class="lang-block">
+              <p>請分類垃圾並投入指定垃圾桶，如有大量垃圾請通知房東。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>設備・備品 / Facilities &amp; Equipment / 設備與備品</h3>
+            <div class="lang-block">
+              <p>家具・家電・備品は丁寧に扱い、破損や紛失があった場合は速やかにお知らせください。</p>
+            </div>
+            <div class="lang-block">
+              <p>Handle all furniture, appliances, and amenities with care. Report any damage or loss immediately.</p>
+            </div>
+            <div class="lang-block">
+              <p>請愛惜家具、家電與備品，如有損壞或遺失請立刻聯繫我們。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>セキュリティ / Security / 安全</h3>
+            <div class="lang-block">
+              <p>外出時・就寝時は必ず玄関を施錠し、宿泊者以外の立ち入りは禁止です。</p>
+            </div>
+            <div class="lang-block">
+              <p>Lock the entrance whenever you go out or go to bed. Only registered guests may enter.</p>
+            </div>
+            <div class="lang-block">
+              <p>外出或就寢時請務必鎖門，非登記房客不得進入。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>緊急時 / Emergency / 緊急狀況</h3>
+            <div class="lang-block">
+              <p>火災・事故など緊急時は119（消防・救急）または110（警察）へ連絡し、その後ホストにもご連絡ください。</p>
+            </div>
+            <div class="lang-block">
+              <p>
+                In case of fire or accident, call 119 (fire/ambulance) or 110 (police), then notify the host.
+              </p>
+            </div>
+            <div class="lang-block">
+              <p>遇火災或事故請先撥打119（消防／救護）或110（警察），之後通報房東。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>禁止行為について / Prohibited Acts / 禁止事項</h3>
+            <div class="lang-block">
+              <p>喫煙（罰金16,500円）、ゴミの不法投棄（罰金3,000円）、予約人数の無断超過（20,000円 × 超過人数）などは禁止です。</p>
+              <p>設備の汚損・破損・紛失があった場合は実費で請求します。</p>
+            </div>
+            <div class="lang-block">
+              <p>
+                Smoking (fine JPY 16,500), illegal dumping (fine JPY 3,000), and unreported extra guests (JPY 20,000 per person) are prohibited. Damage, staining, or loss will be charged at cost.
+              </p>
+            </div>
+            <div class="lang-block">
+              <p>嚴禁吸菸（罰金16,500日圓）、非法丟棄垃圾（罰金3,000日圓）、未通報的超額入住（每人20,000日圓）。</p>
+              <p>如有設備污損、損壞或遺失，將依實際費用索賠。</p>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <h3>その他 / Others / 其他</h3>
+            <div class="lang-block">
+              <p>ルールを守って、快適で楽しい滞在をお過ごしください。</p>
+            </div>
+            <div class="lang-block">
+              <p>Please follow the rules and enjoy your stay.</p>
+            </div>
+            <div class="lang-block">
+              <p>請遵守規則，祝您入住愉快。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="waste">
+        <div class="section-header">
+          <h2>6：ゴミの分別方法 ・ Waste Sorting</h2>
+          <span>浦添市のルールに沿った分類方法です。</span>
+        </div>
+
+        <div class="waste-grid">
+          <div class="waste-card">
+            <h3>可燃ゴミ ・ Burnable ・ 可燃垃圾</h3>
+            <div class="waste-illustration slim">
+              <img src="images/Burnable.png" alt="Burnable waste illustration" />
+            </div>
+            <div class="lang-block">
+              <p>対象： 生ごみ・プラスチック類・紙くず</p>
+              <p>
+                生ごみ： 野菜くず、茶がら、残飯、貝殻など。食用油は新聞紙・キッチンペーパー等に吸わせて出し、必ず水切りしてから袋へ。
+              </p>
+              <p>
+                プラスチック類： ビニール袋・レジ袋、プラスチック製品、発泡スチロール、テープ類、CD・DVD、おもちゃなど。
+              </p>
+              <p>紙くず： ティッシュ、紙おむつ。</p>
+            </div>
+            <div class="lang-block">
+              <p>Food waste ・ Plastics ・ Paper scraps</p>
+              <p>
+                Food waste: vegetable peelings, tea leaves, leftovers, shells, etc. Cooking oil: soak into newspaper or kitchen paper before disposal. Drain excess water before putting into the bag.
+              </p>
+              <p>
+                Plastics: plastic/retail bags, plastic items, polystyrene foam, tapes, CDs/DVDs, toys, etc.
+              </p>
+              <p>Paper scraps: tissues, disposable diapers.</p>
+            </div>
+            <div class="lang-block">
+              <p>對象： 生廚餘・塑膠類・紙屑</p>
+              <p>
+                生廚餘： 菜渣、茶渣、剩飯、貝殼等。食用油請先用報紙或廚房紙巾吸附後再丟，並瀝乾水分再裝袋。
+              </p>
+              <p>
+                塑膠類： 塑膠袋／購物袋、各類塑膠製品、保麗龍、膠帶、CD／DVD、玩具等。
+              </p>
+              <p>紙屑： 面紙、紙尿布。</p>
+            </div>
+          </div>
+
+          <div class="waste-card">
+            <h3>不燃ゴミ ・ Non-burnable ・ 不可燃垃圾</h3>
+            <div class="waste-illustration slim">
+              <img src="images/Non-burnable.png" alt="Non-burnable waste illustration" />
+            </div>
+            <div class="lang-block">
+              <p>対象： 金属類／ガラス・びん類／陶器類／その他（小型家電 など）</p>
+              <p>
+                金属類： 鍋・フライパン・やかん、金属くず・針金、ハンガー、小物類、金属缶 など
+              </p>
+              <p>
+                ガラス・びん類： ガラスコップ・皿、板ガラス、鏡、電球・LED球、化粧品びん、割れたびん、油びん など
+              </p>
+              <p>陶器類： 茶碗・皿・花びん・土鍋 など</p>
+              <p>※プラスチック製品は可燃ごみへ出してください。</p>
+            </div>
+            <div class="lang-block">
+              <p>Categories: Metals / Glass &amp; Bottles / Ceramics / Others (small appliances, etc.)</p>
+              <p>Metals: pots, frying pans, kettles; metal scraps, wire; hangers; small metal items; metal cans, etc.</p>
+              <p>
+                Glass &amp; Bottles: glass cups/plates, window glass, mirrors, light bulbs/LED bulbs, cosmetic bottles, broken bottles, oil bottles, etc.
+              </p>
+              <p>Ceramics: bowls, plates, vases, earthen pots, etc.</p>
+              <p>Note: Plastic items should be disposed of as burnable waste.</p>
+            </div>
+            <div class="lang-block">
+              <p>對象： 金屬類／玻璃・瓶罐類／陶瓷類／其他（小型家電等）</p>
+              <p>金屬類： 鍋子、平底鍋、熱水壺；金屬碎片、鐵絲；衣架；小型金屬用品；金屬罐等。</p>
+              <p>
+                玻璃・瓶罐類： 玻璃杯／盤、玻璃板、鏡子、燈泡／LED燈泡、化妝品玻璃瓶、破損玻璃瓶、油瓶等。
+              </p>
+              <p>陶瓷類： 碗、盤、花瓶、土鍋等。</p>
+              <p>註記： 塑膠製品請作為可燃垃圾處理。</p>
+            </div>
+          </div>
+
+          <div class="waste-card">
+            <h3>資源ゴミ ・ Recyclables ・ 資源回收</h3>
+            <div class="waste-illustration medium">
+              <img src="images/Recyclables.png" alt="Recyclable waste illustration" />
+            </div>
+            <div class="lang-block">
+              <p>対象： 金属類／ガラス・びん類／陶器類／その他（小型家電 など）</p>
+              <p>
+                金属類： 鍋・フライパン・やかん、金属くず・針金、ハンガー、小物類、金属缶 など
+              </p>
+              <p>
+                ガラス・びん類： ガラスコップ・皿、板ガラス、鏡、電球・LED 球、化粧品びん、割れたびん、油びん など
+              </p>
+              <p>陶器類： 茶碗・皿・花びん・土鍋 など</p>
+              <p>注意：プラスチック製品は可燃ごみとして出してください。</p>
+              <p>ペットボトルは中身を空にして軽くすすぎ、キャップ・ラベルは可燃ごみへ。可能であればつぶしてまとめてください。</p>
+            </div>
+            <div class="lang-block">
+              <p>Categories: Metals / Glass &amp; Bottles / Ceramics / Others (small appliances, etc.)</p>
+              <p>Metals: pots, frying pans, kettles; metal scraps, wire; hangers; small metal items; metal cans, etc.</p>
+              <p>
+                Glass &amp; Bottles: glass cups/plates, window glass, mirrors, light bulbs/LED bulbs, cosmetic bottles, broken bottles, oil bottles, etc.
+              </p>
+              <p>Ceramics: bowls, plates, vases, earthen pots, etc.</p>
+              <p>Note: Please dispose of plastic items as burnable waste.</p>
+              <p>PET bottles: Empty and rinse lightly, remove caps and labels (burnable waste). Crush bottles if possible and bundle them.</p>
+            </div>
+            <div class="lang-block">
+              <p>對象： 金屬類／玻璃・瓶罐類／陶瓷類／其他（小型家電等）</p>
+              <p>金屬類： 鍋子、平底鍋、熱水壺；金屬碎片、鐵絲；衣架；小型金屬用品；金屬罐等。</p>
+              <p>
+                玻璃・瓶罐類： 玻璃杯／盤、玻璃板、鏡子、燈泡／LED燈泡、化妝品玻璃瓶、破損玻璃瓶、油瓶等。
+              </p>
+              <p>陶瓷類： 碗、盤、花瓶、土鍋等。</p>
+              <p>注意： 塑膠製品請作為可燃垃圾處理。</p>
+              <p>PET 瓶： 請倒空並簡單沖洗，瓶蓋與標籤請丟入可燃垃圾，可的話請壓扁後集中放入垃圾桶。</p>
+            </div>
+          </div>
+
+          <div class="waste-card">
+            <h3>有害・危険ゴミ ・ Hazardous ・ 有害垃圾</h3>
+            <div class="waste-illustration short">
+              <img src="images/Hazardous.png" alt="Hazardous waste illustration" />
+            </div>
+            <div class="lang-block">
+              <p>危険ごみ</p>
+              <p>対象： 蛍光灯／水銀使用製品（体温計など）／乾電池（小型充電池を除く）／使い捨てライター・スプレー缶</p>
+              <p>こちらは、他のゴミと混ぜずに、ゴミ箱の近くに置いてください。</p>
+            </div>
+            <div class="lang-block">
+              <p>Hazardous Waste</p>
+              <p>Categories: Fluorescent lamps / Mercury products (e.g., thermometers) / Dry batteries (excl. small rechargeables) / Disposable lighters &amp; spray cans</p>
+              <p>Please keep these items separate and place them near the trash bin, not mixed with other waste.</p>
+            </div>
+            <div class="lang-block">
+              <p>危險垃圾</p>
+              <p>對象： 螢光燈／含水銀製品（如體溫計）／乾電池（不含小型充電電池）／一次性打火機與噴霧罐</p>
+              <p>請勿與其他垃圾混合，請分開放置在垃圾桶附近。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="appliance">
+        <div class="section-header">
+          <h2>7：室内の設備機器の使い方 ・ Appliance &amp; Device Guide</h2>
+          <span>写真と操作手順で、すぐに使い方が分かるようにまとめました。</span>
+        </div>
+
+        <div class="appliance-stack">
+          <div class="appliance-card">
+            <div class="appliance-photos">
+              <img src="images/Bath Control .png" alt="Bath control panel" />
+            </div>
+            <div class="appliance-content">
+              <h3>お風呂モニター ・ Bath Control ・ 浴室控制面板</h3>
+              <ul>
+                <li>自動で湯はり：ふろ自動 → 自動停止まで待つ（アナウンス音あり）。</li>
+                <li>ぬるい時：追いだき（温め直し）。</li>
+                <li>もう少し増やす：たし湯 ／ 薄める：たし水。</li>
+                <li>温度を変える：表示が「給湯」になっている時に ▲/▼。浴室側を優先したいときは「優先」。</li>
+                <li>呼び出し：呼出でキッチン側にチャイム通知。</li>
+              </ul>
+              <ul>
+                <li>Auto fill: Press Auto Fill Bath; it stops automatically.</li>
+                <li>Too cool? Press Reheat.</li>
+                <li>Need more water? Add Hot Water / Cool down? Add Cold Water.</li>
+                <li>Change temp: When “Hot-water temp” is shown, use ▲/▼. Press Priority to control from this panel.</li>
+                <li>Call: Call button rings the kitchen unit.</li>
+              </ul>
+              <ul>
+                <li>自動放水：按「自動放澡」，滿水後會自動停止。</li>
+                <li>水溫偏低：按「追焚」加熱。</li>
+                <li>想加多一點：按「加熱水」／想稀釋：按「加冷水」。</li>
+                <li>調整溫度：顯示「給湯」時用 ▲/▼，需要以浴室面板為主時按「優先」。</li>
+                <li>呼叫：按「呼叫」，廚房面板會響鈴。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="appliance-card">
+            <div class="appliance-photos">
+              <img src="images/Bathroom Dryer.png" alt="Bathroom dryer control panel" />
+            </div>
+            <div class="appliance-content">
+              <h3>浴室乾燥機 ・ Bathroom Dryer ・ 浴室乾燥機</h3>
+              <ul>
+                <li>洗濯物を乾かす前にハンガーで重なりを解き、ドアを閉める。</li>
+                <li>［乾燥］ → ［タイマー切替］ → ▲で時間設定（目安：少量2〜3h／厚物4〜6h）。</li>
+                <li>乾きが甘い時は［タイマー切替］＋▲で延長。</li>
+                <li>終了したら［停止］ → 洗濯物を取り出す。</li>
+              </ul>
+              <ul>
+                <li>Laundry Drying: Hang items evenly, close the bathroom door.</li>
+                <li>Press [Dry] → [Timer] → ▲ to set time (Guide: small load 2〜3 h / bulky 4〜6 h).</li>
+                <li>Need more time? Press [Timer] + ▲.</li>
+                <li>When finished, press [Stop] and remove clothes.</li>
+              </ul>
+              <ul>
+                <li>衣物乾燥：使用衣架懸掛並保持間距，關上浴室門。</li>
+                <li>按［乾燥］→［計時］→ ▲設定時間（少量2〜3小時／厚重4〜6小時）。</li>
+                <li>若未全乾，按［計時］＋▲延長。</li>
+                <li>結束後按［停止］並取出衣物。</li>
+              </ul>
+            </div>
+          </div>
+          <div class="appliance-card">
+            <div class="appliance-photos">
+              <img src="images/Washing Machine.png" alt="Washing machine control panel" />
+            </div>
+            <div class="appliance-content">
+              <h3>洗濯機 ・ Washing Machine ・ 洗衣機</h3>
+              <ul>
+                <li>電源 入 → コース（例：標準）を選択。</li>
+                <li>必要に応じて 水量／洗い・すすぎ・脱水 を調整。</li>
+                <li>スタート／一時停止 を押す。</li>
+                <li>デリケート衣類は「おしゃれ着」、毛布は「毛布」、脱水は「脱水」を選択。</li>
+              </ul>
+              <ul>
+                <li>Press Power On, choose a Program (e.g., Normal).</li>
+                <li>Adjust Water Level / Wash-Rinse-Spin if needed.</li>
+                <li>Press Start/Pause.</li>
+                <li>Use Delicates for gentle items, Blanket for bulky items, Spin for spin-only.</li>
+              </ul>
+              <ul>
+                <li>按「電源」開，選擇程式（如：標準）。</li>
+                <li>需要時調整「水位／洗滌-漂洗-脫水」。</li>
+                <li>按「啟動／暫停」。</li>
+                <li>精緻衣物選「輕柔」，厚重衣物選「毛毯」，僅脫水選「脫水」。</li>
+              </ul>
+              <div class="label-explainer">
+                「電源」= Power / 「スタート／一時停止」= Start/Pause / 「標準」= Normal / 「おしゃれ着」= Delicates / 「毛布」= Blanket / 「脱水」= Spin
+              </div>
+            </div>
+          </div>
+
+          <div class="appliance-card">
+            <div class="appliance-photos">
+              <img src="images/Clothes Dryer .png" alt="Clothes dryer control panel" />
+            </div>
+            <div class="appliance-content">
+              <h3>衣類乾燥機 ・ Clothes Dryer ・ 烘衣機</h3>
+              <ul>
+                <li>フィルターを確認して糸くずを取り除き、正しく装着。</li>
+                <li>衣類を入れて扉をしっかり閉める。</li>
+                <li>電源 → コース（標準／厚物／シーツ・毛布／エコ）を選ぶ。</li>
+                <li>必要なら タイマー と 時間調節（▲/▼）。</li>
+                <li>スタート／一時停止 → 残り時間を確認。</li>
+                <li>終了後は衣類を取り出し、フィルター掃除のうえ扉を少し開けて乾燥庫内を冷ます。</li>
+              </ul>
+              <ul>
+                <li>Clean &amp; set the lint filter (inside the door).</li>
+                <li>Load items, close the door firmly.</li>
+                <li>Press Power, choose a Program (Normal / Heavy / Sheets-Blanket / Eco).</li>
+                <li>Use Timer and ▲/▼ if needed.</li>
+                <li>Press Start/Pause and check the remaining time.</li>
+                <li>After finishing, remove items, clean the filter, and leave the door slightly open.</li>
+              </ul>
+              <ul>
+                <li>清理並裝回濾網（門內側）。</li>
+                <li>放入衣物並確實關門。</li>
+                <li>按「電源」，選擇程式（標準／厚重／床單-毯子／節能）。</li>
+                <li>需要時使用「計時」與「時間調整」（▲/▼）。</li>
+                <li>按「啟動／暫停」，查看剩餘時間。</li>
+                <li>結束後取出衣物，清理濾網並將門微開通風。</li>
+              </ul>
+            </div>
+          </div>
+          <div class="appliance-card">
+            <div class="appliance-photos">
+              <img src="images/Rice Cooker.png" alt="Rice cooker" />
+            </div>
+            <div class="appliance-content">
+              <h3>炊飯器 ・ Rice Cooker ・ 電鍋</h3>
+              <ul>
+                <li>内ぶた・内釜をセットし、米を計量して研ぐ（無洗米は研がない）。</li>
+                <li>目盛りに合わせて水を入れる（例：2合→「2」の線）。</li>
+                <li>電源ON → ［メニュー］で「白米」（無洗米なら「無洗米」）を選択。</li>
+                <li>かたさ（ふつう／やわらかめ／かため）を表示で確認（▲／▼で切替）。</li>
+                <li>［炊飯］を押し、完了のブザーまで待つ。</li>
+                <li>ブザー後10分ほど蒸らし、ほぐして完成。必要なら保温のままでOK。</li>
+                <li>使用後は内釜を洗ってよく乾かしてください。</li>
+              </ul>
+              <ul>
+                <li>Set the inner lid and pot. Measure rice and rinse (skip for pre-washed rice).</li>
+                <li>Add water to the scale line (e.g., 2 cups → line “2”).</li>
+                <li>Power ON → select “White Rice” (or “Pre-washed Rice”) from Menu.</li>
+                <li>Check texture (Normal / Softer / Harder) and adjust with ▲/▼.</li>
+                <li>Press Cook and wait for the beep.</li>
+                <li>After the beep, rest for 10 minutes, fluff, and keep warm if needed.</li>
+                <li>After use, wash and dry the inner pot thoroughly.</li>
+              </ul>
+              <ul>
+                <li>裝好內蓋與內鍋，用量杯取米並洗米（免洗米免洗）。</li>
+                <li>加水至刻度線（例：2合 → 「2」刻度）。</li>
+                <li>開機 → 在【選單】選擇「白米」（免洗米選「免洗米」）。</li>
+                <li>確認口感（普通／偏軟／偏硬），可用 ▲／▼ 切換。</li>
+                <li>按【炊飯】，等待蜂鳴。</li>
+                <li>蜂鳴後悶10分鐘，再翻鬆；需要時可保持保溫。</li>
+                <li>使用後請清洗內鍋並徹底晾乾。</li>
+              </ul>
+              <div class="label-explainer">
+                「メニュー」= Menu / 「炊飯」= Cook / 「保温」= Keep Warm / 「▲▼」= Toggle / 「とりけし」= Cancel
+              </div>
+            </div>
+          </div>
+
+          <div class="appliance-card">
+            <div class="appliance-photos">
+              <img src="images/Gas Stove.png" alt="Gas stove knobs" />
+            </div>
+            <div class="appliance-content">
+              <h3>ガスコンロ ・ Gas Stove ・ 瓦斯爐</h3>
+              <ul>
+                <li>換気扇をONにしてから操作します。</li>
+                <li>使う口のつまみを押し込み、「カチカチ」と音がしたあと点火します。</li>
+                <li>炎が鍋底からはみ出さない程度に火力を調整します。</li>
+                <li>使用後はつまみを押して元に戻し、火を完全に消してください。</li>
+              </ul>
+              <ul>
+                <li>Turn on the range hood first.</li>
+                <li>Push the knob for the burner and turn left to ignite (you’ll hear clicking).</li>
+                <li>Adjust the flame so it stays under the pan.</li>
+                <li>After cooking, push and turn the knob to OFF. Don’t leave pans unattended on low flame.</li>
+              </ul>
+              <ul>
+                <li>先打開排油煙機。</li>
+                <li>按下要使用的爐旋鈕，向左轉點火（會聽到喀喀聲）。</li>
+                <li>調整火力，讓火焰不超出鍋底。</li>
+                <li>使用後按下並轉回關閉，勿在小火時離開。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="appliance-card">
+            <div class="appliance-photos">
+              <img src="images/Toaster .png" alt="Toaster" />
+            </div>
+            <div class="appliance-content">
+              <h3>トースター ・ Toaster ・ 烤麵包機</h3>
+              <ul>
+                <li>左ダイヤルで温度を選びます（トーストは230℃が目安）。</li>
+                <li>右ダイヤルでタイマーを回してスタート。時間になると「チン」で自動OFF。</li>
+              </ul>
+              <ul>
+                <li>Use the left dial to set the temperature (toast: 230°C).</li>
+                <li>Turn the right dial to set the timer. The toaster turns off automatically with a “ding”.</li>
+              </ul>
+              <ul>
+                <li>用左旋鈕設定溫度（吐司建議230°C）。</li>
+                <li>用右旋鈕設定時間並開始，時間到會「叮」一聲並自動關閉。</li>
+              </ul>
+            </div>
+          </div>
+          <div class="appliance-card">
+            <div class="appliance-photos">
+              <img src="images/Lighting Remote.png" alt="Lighting remote" />
+            </div>
+            <div class="appliance-content">
+              <h3>照明リモコン ・ Lighting Remote ・ 照明遙控</h3>
+              <ul>
+                <li>全灯：すべて点灯（最大の明るさ・白色寄り）。</li>
+                <li>消灯：照明を消す。</li>
+                <li>普段：よく使う明るさ／色に戻す（標準設定）。</li>
+                <li>常夜灯：豆電球モード。</li>
+                <li>白い色へ／暖かい色へ：色温度を調整。</li>
+                <li>明るいへ／暗い：明るさを増減。</li>
+                <li>使い方：照明に向けてボタンを押す。反応しない場合は壁スイッチと位置を確認。</li>
+              </ul>
+              <ul>
+                <li>All Light: all lights on (bright, cool tone).</li>
+                <li>Off: turn lights off.</li>
+                <li>Normal: return to standard brightness &amp; color.</li>
+                <li>Night Light: very dim night mode.</li>
+                <li>Cooler / Warmer: adjust color temperature.</li>
+                <li>Brighter / Dimmer: adjust brightness.</li>
+                <li>How to use: point at the fixture and press. If it fails, check the wall switch and distance.</li>
+              </ul>
+              <ul>
+                <li>全燈：全部全亮（最亮／偏冷白）。</li>
+                <li>消燈：關閉照明。</li>
+                <li>普通：恢復標準亮度與色溫。</li>
+                <li>常夜燈：夜燈模式。</li>
+                <li>偏白／偏暖：調整色溫。</li>
+                <li>更亮／更暗：調整亮度。</li>
+                <li>使用方式：對著燈具按下按鍵即可，無反應時確認牆壁開關與距離方向。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="appliance-card">
+            <div class="appliance-photos">
+              <img src="images/AC Remote.png" alt="Air conditioner remote" />
+            </div>
+            <div class="appliance-content">
+              <h3>エアコンリモコン ・ AC Remote ・ 冷氣遙控</h3>
+              <ul>
+                <li>冷房：［冷房］→［温度▲/▼］で調整。</li>
+                <li>除湿：［除湿］→［しつど▲/▼］。</li>
+                <li>暖房：［暖房］→［温度▲/▼］。</li>
+                <li>送風／空気清浄：［空清送風］。</li>
+                <li>停止：［停止］。</li>
+                <li>迷ったら：［AI快適自動］で自動調整。</li>
+              </ul>
+              <ul>
+                <li>Cool: Press [冷房] then adjust [温度 ▲/▼].</li>
+                <li>Dehumidify: Press [除湿] then adjust [しつど ▲/▼].</li>
+                <li>Heat: Press [暖房] then adjust [温度 ▲/▼].</li>
+                <li>Fan/Air Purify: Press [空清送風].</li>
+                <li>Stop: Press [停止].</li>
+                <li>Not sure? Press [AI快適自動] for auto mode.</li>
+              </ul>
+              <ul>
+                <li>冷房：按【冷房】後用【温度 ▲/▼】調整。</li>
+                <li>除濕：按【除湿】後用【しつど ▲/▼】調整。</li>
+                <li>暖房：按【暖房】後用【温度 ▲/▼】調整。</li>
+                <li>送風／空氣清淨：按【空清送風】。</li>
+                <li>停止：按【停止】。</li>
+                <li>拿不準時：按【AI快適自動】，自動切換模式。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="appliance-card">
+            <div class="appliance-photos">
+              <img src="images/sofabed1.png" alt="Sofa bed before unfolding" />
+              <img src="images/sofabed2.png" alt="Sofa bed with bedding" />
+            </div>
+            <div class="appliance-content">
+              <h3>ソファベッド ・ Sofa Bed ・ 沙發床</h3>
+              <ul>
+                <li>背もたれを手前に倒します。</li>
+                <li>座面と背もたれがフラットになったか確認します。</li>
+                <li>布団を敷きます。</li>
+                <li>布団はリビング横の押し入れに収納されています。</li>
+              </ul>
+              <ul>
+                <li>Tilt the backrest forward.</li>
+                <li>Ensure the seat and backrest lie flat.</li>
+                <li>Lay out the bedding.</li>
+                <li>Bedding is stored in the closet next to the living room.</li>
+              </ul>
+              <ul>
+                <li>將靠背往前放倒。</li>
+                <li>確認座面與靠背已平坦。</li>
+                <li>鋪上棉被與寢具。</li>
+                <li>寢具收納在客廳旁的壁櫥。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="page-wrap">
+        <p>ご不明点やお困りごとは、予約サイトのメッセージ機能からご連絡ください。24時間以内に返答いたします。</p>
+        <p>If you have any questions or need help, please contact us via the booking site’s message function. We will reply within 24 hours.</p>
+        <p>若有任何疑問或需要協助，請透過預訂網站的訊息功能與我們聯繫。我們將在24 小時內回覆。</p>
+        <p class="footer-note">Website by kzcodelab. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
+
+
+
