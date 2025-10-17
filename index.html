@@ -127,10 +127,16 @@
         text-align: center;
       }
 
-      .hero h1 {
+      .hero h1,
+      .hero h2 {
         font-size: clamp(2.1rem, 6vw, 3.2rem);
         margin: 0;
         letter-spacing: 0.08em;
+      }
+
+      .hero h2 {
+        color: var(--accent);
+        margin-top: 0.4rem;
       }
 
       .hero p {
@@ -270,10 +276,18 @@
         min-height: clamp(210px, 30vw, 280px);
       }
 
+      .map-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f4f8;
+      }
+
       .map-image img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
       }
 
       .map-embed iframe {
@@ -324,6 +338,12 @@
         gap: clamp(1rem, 3vw, 1.4rem);
       }
 
+      .bus-visuals {
+        display: grid;
+        gap: clamp(0.8rem, 2vw, 1.2rem);
+        align-content: start;
+      }
+
       .bus-info {
         border: 1px solid var(--border);
         border-radius: var(--radius);
@@ -359,6 +379,39 @@
         flex-direction: column;
         justify-content: center;
         min-height: clamp(260px, 40vw, 320px);
+      }
+
+      .bus-stop-photo {
+        margin: 0;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: clamp(0.75rem, 2vw, 1rem);
+        display: grid;
+        gap: clamp(0.5rem, 2vw, 0.8rem);
+      }
+
+      .bus-stop-photo .photo-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        border-radius: calc(var(--radius) - 8px);
+        overflow: hidden;
+        background: #f0f3f8;
+      }
+
+      .bus-stop-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .bus-stop-photo figcaption {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--muted);
+        text-align: center;
       }
 
       .route-flow {
@@ -412,9 +465,22 @@
         gap: 1.1rem;
       }
 
+      @media (min-width: 900px) {
+        .grid-two.checkin-layout {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
       .checkin-info {
         display: grid;
         gap: 1rem;
+      }
+
+      @media (min-width: 900px) {
+        .checkin-info {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          align-items: stretch;
+        }
       }
 
       .checkin-card {
@@ -422,6 +488,9 @@
         border: 1px solid var(--border);
         border-radius: var(--radius);
         padding: clamp(1rem, 3vw, 1.4rem);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
       }
 
       .checkin-card h3 {
@@ -747,8 +816,9 @@
     </nav>
 
     <header class="hero page-wrap">
-      <h1>WELCOME GUIDE</h1>
-      <p>この度は予約いただきありがとうございます。</p>
+      <h1>Villa FuKu</h1>
+      <h2>WELCOME GUIDE</h2>
+      <p>この度はご宿泊いただきありがとうございます。</p>
     </header>
 
     <main class="page-wrap">
@@ -789,17 +859,17 @@
               <h3>駐車場 ・ Parking ・ 停車</h3>
               <div class="lang-block">
                 <p>
-                  建物前には普通車2台分の駐車スペースがあります。大型車の場合は1台のみ駐車可能です。駐車の際は壁・フェンスに接触しないよう低速で操作し、歩道や車道にはみ出さない位置にまっすぐ停めてください。
+                  建物前には、小型車3台分・大型車3台分の駐車スペースがございます。駐車の際は、低速でゆっくりと操作し、壁やフェンスに接触しないようご注意ください。
                 </p>
               </div>
               <div class="lang-block">
                 <p>
-                  There is parking space for two standard-sized vehicles in front of the building. Only one large vehicle can be parked. When parking, maneuver slowly to avoid contact with walls or fences, and park straight in a position that does not encroach onto the sidewalk or roadway.
+                  There are parking spaces for 3 small cars and 3 large cars in front of the building. When parking, please drive slowly and take care not to touch the walls or fences.
                 </p>
               </div>
               <div class="lang-block">
                 <p>
-                  建築物前方設有可停放兩輛普通轎車的停車空間。若為大型車輛，僅能停放一輛。停車時請以低速操作避免觸碰牆壁或圍欄，並將車輛直線停放於不侵佔人行道或車道的位置。
+                  本建築前方設有小型車 3 個車位、 大型車 3 個車位。停車時請低速慢行，並注意避免碰觸牆面或圍欄。
                 </p>
               </div>
             </div>
@@ -826,16 +896,16 @@
             <div class="travel-card">
               <h3>レンタカー</h3>
               <div class="lang-block">
-                <p>那覇空港から国道58号線を北上し、勢理客交差点を右折。約20分で到着します。</p>
-                <p>空港付近は渋滞しやすいため、余裕を持ったスケジュールでお越しください。</p>
+                <p>空港から海側（港方面）へ向かい、みそらトンネルに入る。そのまま那覇西道路を北へ（浦添方面）へ。</p>
+                <p>港川または牧港で下り、海沿いの一般道を北へ進み、勢理客方面へ右折。空港から宿まで約15分で到着します。</p>
               </div>
               <div class="lang-block">
-                <p>Head north on Route 58 from Naha Airport and turn right at Jicchaku intersection. The drive takes about 20 minutes.</p>
-                <p>Traffic can be heavy around the airport, so allow extra travel time.</p>
+                <p>Head toward the seaside (port area) from the airport and enter the Umisora Tunnel. Continue north on the Naha West Road (toward Urasoe).</p>
+                <p>Exit at Minatogawa or Makiminato, go north along the coastal road, then turn right toward Serikyaku. You’ll reach the accommodation in about 15 minutes from the airport.</p>
               </div>
               <div class="lang-block">
-                <p>從那霸機場沿國道58號線北行，於勢理客十字路口右轉。約20分鐘即可抵達。</p>
-                <p>機場周邊易發生交通壅塞，請預留充足時間規劃行程。</p>
+                <p>從機場往海側（港區方向）前進，進入Umisora 隧道。之後沿著那覇西道路向北（往浦添方向）行駛。</p>
+                <p>在港川或牧港出口下交流道，沿海岸道路向北前進，之後右轉往勢理客方向。從機場到住宿約需 15 分鐘。</p>
               </div>
             </div>
 
@@ -899,7 +969,8 @@
             </div>
           </div>
 
-          <div class="bus-route-card">
+          <div class="bus-visuals">
+            <div class="bus-route-card">
             <div class="route-flow">
               <div class="route-step">
                 <h4>出発 / Departure / 出發</h4>
@@ -920,6 +991,20 @@
                 <p>步行約5分鐘抵達浦添市勢理客3-1-41</p>
               </div>
             </div>
+            </div>
+            <!-- Recommended image size: 1200px x 900px (4:3) -->
+            <figure class="bus-stop-photo">
+              <div class="photo-frame">
+                <img
+                  src="images/bus-stop.png"
+                  alt="勢理客バス停の写真"
+                  loading="lazy"
+                  width="1200"
+                  height="900"
+                />
+              </div>
+              <figcaption>勢理客バス停（降車停留所）</figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -933,17 +1018,44 @@
           <div class="checkin-info">
             <div class="checkin-card">
               <h3>鍵の受け取り ・ Getting the Key ・ 領取鑰匙</h3>
-              <p>チェックイン：16:00以降 / Check-in: After 4:00 PM / 入住：下午4點後</p>
-              <p>チェックアウト：11:00まで / Check-out: By 11:00 AM / 退房：上午11點前</p>
-              <p>
-                鍵の受け取り：玄関横のキーボックスを使用します。暗証番号はチェックインまでにお知らせします。開かない場合はその場からメッセージにてご連絡ください。
-              </p>
-              <p>
-                Key Pickup: Use the key box next to the entrance. We will provide the access code before check-in. If it does not open, please contact us via message from that location.
-              </p>
-              <p>
-                鑰匙領取方式：請使用玄關旁的鑰匙箱。密碼將於入住前告知。若無法開啟，請立即透過訊息聯繫我們。
-              </p>
+                            <div class="lang-block">
+                <p>鍵の受け取り（ポスト）</p>
+                <p>場所：玄関前の郵便ポストの中</p>
+                <p>番号（暗証）：334</p>
+                <ol>
+                  <li>開け方（ダイヤル式・手順）</li>
+                  <li>ダイヤルを右に回し、「3」に合わせる。</li>
+                  <li>そのまま続けてダイヤルをもう一度右に回して、「3」に合わせる。</li>
+                  <li>次にダイヤルを左に回し、「4」に合わせる。</li>
+                  <li>つまみを引くと開きます。</li>
+                </ol>
+              </div>
+              <div class="lang-gap"></div>
+              <div class="lang-block">
+                <p>Getting the Key (Mailbox)</p>
+                <p>Location: Inside the mailbox by the entrance</p>
+                <p>Code: 334</p>
+                <p>How to open (dial type):</p>
+                <ol>
+                  <li>Turn the dial to the right and align with "3."</li>
+                  <li>Keep turning right again and align with "3."</li>
+                  <li>Turn the dial to the left and align with "4."</li>
+                  <li>Pull the knob/lever to open.</li>
+                </ol>
+              </div>
+              <div class="lang-gap"></div>
+              <div class="lang-block">
+                <p>取鑰匙（郵箱）</p>
+                <p>位置：玄關前的郵箱內</p>
+                <p>密碼：334</p>
+                <p>開啟方式（旋鈕式）：</p>
+                <ol>
+                  <li>將旋鈕向右轉，對準「3」。</li>
+                  <li>持續向右再轉一次，對準「3」。</li>
+                  <li>將旋鈕向左轉，對準「4」。</li>
+                  <li>拉起把手／開關即可打開。</li>
+                </ol>
+              </div>
               <div class="alert-note">
                 <p>滞在中も鍵を携帯し、外出時は玄関の施錠を確認してください。</p>
                 <p>紛失には十分注意してください。</p>
@@ -985,14 +1097,6 @@
             </div>
           </div>
 
-          <div class="photo-pair">
-            <div class="photo-slot">
-              <span style="color: var(--muted)">Key box photo (coming soon)</span>
-            </div>
-            <div class="photo-slot">
-              <span style="color: var(--muted)">Return photo (coming soon)</span>
-            </div>
-          </div>
         </div>
       </section>
       <section id="rules">
@@ -1002,6 +1106,25 @@
         </div>
 
         <div class="rules-grid">
+          <div class="rule-item">
+            <h3>ご宿泊人数について / Guest Count / 入住人數</h3>
+            <div class="lang-block">
+              <p>
+                正確な人数でご宿泊いただくようにお願いします。実際の宿泊人数と予約人数が異なる場合は、追加費用を請求いたします。予めご了承ください。
+              </p>
+            </div>
+            <div class="lang-block">
+              <p>
+                Please ensure the actual number of guests matches the reservation. If the actual number differs from the booking, additional charges will apply. Thank you for your understanding.
+              </p>
+            </div>
+            <div class="lang-block">
+              <p>
+                請確保實際入住人數與預訂人數一致。若實際入住人數與預訂不符，將收取額外費用。敬請理解並配合。
+              </p>
+            </div>
+          </div>
+
           <div class="rule-item">
             <h3>玄関について / Entrance / 玄關</h3>
             <div class="lang-block">
@@ -1344,6 +1467,39 @@
         <div class="appliance-stack">
           <div class="appliance-card">
             <div class="appliance-photos">
+              <img src="images/Wifi.png" alt="Wi-Fi information sheet" />
+            </div>
+            <div class="appliance-content">
+              <h3>Wi-Fi &#12539; Wi-Fi Information &#12539; Wi-Fi 說明</h3>
+              <ul>
+                <li>Wi-Fi のご案内</li>
+                <li>ネットワーク名（SSID）</li>
+                <li>推奨：Buffalo-A410-WPA3（2.4/5GHz 自動）</li>
+                <li>高速重視：Buffalo-5G-A410（5GHz）</li>
+                <li>到達重視：Buffalo-2G-A410（2.4GHz）</li>
+                <li>パスワード（暗号化キー）：7v3t7dpdpxjs3</li>
+              </ul>
+              <ul>
+                <li>Wi-Fi Information</li>
+                <li>Network (SSID)</li>
+                <li>Recommended: Buffalo-A410-WPA3 (auto 2.4/5GHz)</li>
+                <li>Faster speed: Buffalo-5G-A410 (5GHz)</li>
+                <li>Better range: Buffalo-2G-A410 (2.4GHz)</li>
+                <li>Password: 7v3t7dpdpxjs3</li>
+              </ul>
+              <ul>
+                <li>網路名稱（SSID）</li>
+                <li>Wi-Fi 說明</li>
+                <li>推薦：Buffalo-A410-WPA3（自動 2.4/5GHz）</li>
+                <li>速度優先：Buffalo-5G-A410（5GHz）</li>
+                <li>覆蓋優先：Buffalo-2G-A410（2.4GHz）</li>
+                <li>密碼：7v3t7dpdpxjs3</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="appliance-card">
+            <div class="appliance-photos">
               <img src="images/Bath Control .png" alt="Bath control panel" />
             </div>
             <div class="appliance-content">
@@ -1458,13 +1614,60 @@
                 <li>按「啟動／暫停」，查看剩餘時間。</li>
                 <li>結束後取出衣物，清理濾網並將門微開通風。</li>
               </ul>
-            </div>
           </div>
-          <div class="appliance-card">
-            <div class="appliance-photos">
-              <img src="images/Rice Cooker.png" alt="Rice cooker" />
-            </div>
-            <div class="appliance-content">
+        </div>
+        <div class="appliance-card">
+          <div class="appliance-photos">
+            <img src="images/Bath tab.png" alt="Bathtub outlet cautioned in red" />
+          </div>
+          <div class="appliance-content">
+            <h3>バスタブ ・ Bathtub ・ 浴缸出水口</h3>
+            <ul>
+              <li>バスタブを使用する際は必ずご注意ください。</li>
+              <li>矢印の位置はお湯の排出口（給湯口）です。</li>
+              <li>繊細な作りのため、回したり触れたりしないでください。</li>
+              <li>お湯を溜める場合は浴室リモコンから操作してください。</li>
+            </ul>
+            <ul>
+              <li>The red arrow marks the water outlet for the tub.</li>
+              <li>Please do not twist or touch it to avoid damage.</li>
+              <li>To fill the bathtub, use the bathroom control panel.</li>
+            </ul>
+            <ul>
+              <li>箭頭所指的是浴缸出水口。</li>
+              <li>請勿轉動或觸碰，以免造成損壞。</li>
+              <li>若需加水，請透過浴室熱水器控制面板操作。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="appliance-card">
+          <div class="appliance-photos">
+            <img src="images/Bath tab2.png" alt="Bathtub stopper button and cover" />
+          </div>
+          <div class="appliance-content">
+            <h3>バスタブ操作 ・ Bathtub Control ・ 浴缸操作</h3>
+            <ul>
+              <li>バスタブにお湯をためる / 排水する際の手順です。</li>
+              <li>浴槽のボタンを押すと止水栓が下がります。</li>
+              <li>ボタンは風呂蓋の横にあります。</li>
+            </ul>
+            <ul>
+              <li>Fill / drain the bathtub using the stopper button.</li>
+              <li>The stopper drops only after you press the button on the tub.</li>
+              <li>The button is located next to the bath cover.</li>
+            </ul>
+            <ul>
+              <li>在浴缸里蓄水 / 排水時請按下按鈕。</li>
+              <li>按下浴缸上的按鈕後，阻水塞才會下降。</li>
+              <li>按鈕位於浴缸蓋旁邊。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="appliance-card">
+          <div class="appliance-photos">
+            <img src="images/Rice Cooker.png" alt="Rice cooker" />
+          </div>
+          <div class="appliance-content">
               <h3>炊飯器 ・ Rice Cooker ・ 電鍋</h3>
               <ul>
                 <li>内ぶた・内釜をセットし、米を計量して研ぐ（無洗米は研がない）。</li>
@@ -1505,23 +1708,23 @@
             </div>
             <div class="appliance-content">
               <h3>ガスコンロ ・ Gas Stove ・ 瓦斯爐</h3>
-              <ul>
+                            <ul>
                 <li>換気扇をONにしてから操作します。</li>
                 <li>使う口のつまみを押し込み、「カチカチ」と音がしたあと点火します。</li>
                 <li>炎が鍋底からはみ出さない程度に火力を調整します。</li>
                 <li>使用後はつまみを押して元に戻し、火を完全に消してください。</li>
               </ul>
               <ul>
-                <li>Turn on the range hood first.</li>
-                <li>Push the knob for the burner and turn left to ignite (you’ll hear clicking).</li>
-                <li>Adjust the flame so it stays under the pan.</li>
-                <li>After cooking, push and turn the knob to OFF. Don’t leave pans unattended on low flame.</li>
+                <li>Turn ON the range hood (vent) before operating.</li>
+                <li>Push in the knob for the burner you'll use; after the clicking sound, the flame will ignite.</li>
+                <li>Adjust the flame so it does not extend beyond the bottom of the pan.</li>
+                <li>After use, push and turn the knob back to OFF and make sure the flame is completely out.</li>
               </ul>
               <ul>
-                <li>先打開排油煙機。</li>
-                <li>按下要使用的爐旋鈕，向左轉點火（會聽到喀喀聲）。</li>
-                <li>調整火力，讓火焰不超出鍋底。</li>
-                <li>使用後按下並轉回關閉，勿在小火時離開。</li>
+                <li>操作前先打開排油煙機。</li>
+                <li>按下欲使用的爐口旋鈕，聽到喀喀聲後即可點火。</li>
+                <li>調整火力，使火焰不要超出鍋底邊緣。</li>
+                <li>使用後請將旋鈕按下並轉回關閉，確認火焰完全熄滅。</li>
               </ul>
             </div>
           </div>
@@ -1656,6 +1859,14 @@
     </footer>
   </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
