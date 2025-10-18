@@ -689,6 +689,76 @@
         justify-items: center;
       }
 
+      .appliance-photos.lint-steps {
+        width: min(100%, 360px);
+        justify-items: stretch;
+        gap: 0.9rem;
+      }
+
+      .lint-step {
+        position: relative;
+        border: 1px dashed var(--border);
+        border-radius: calc(var(--radius) - 6px);
+        padding: 1rem;
+        background: #f3f6fb;
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .lint-step img {
+        width: 100%;
+        border-radius: calc(var(--radius) - 10px);
+        background: #fff;
+      }
+
+      .lint-step .step-index {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lint-step .step-text {
+        display: grid;
+        gap: 0.4rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+        text-align: left;
+      }
+
+      .lint-step .step-text h4 {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--text);
+      }
+
+      .lint-step .step-text p {
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .lint-guide .appliance-content {
+        order: 0;
+      }
+
+      @media (max-width: 640px) {
+        .appliance-card.lint-guide {
+          grid-template-columns: 1fr !important;
+        }
+        .lint-guide .appliance-content {
+          order: -1;
+        }
+      }
+
       .appliance-photos img {
         width: min(100%, 360px);
         height: auto;
@@ -1614,6 +1684,64 @@
                 <li>按「啟動／暫停」，查看剩餘時間。</li>
                 <li>結束後取出衣物，清理濾網並將門微開通風。</li>
               </ul>
+            </div>
+          </div>
+        <div class="appliance-card lint-guide">
+          <div class="appliance-photos lint-steps">
+            <div class="lint-step">
+              <span class="step-index">1</span>
+              <img src="images/Photo placeholder 1.png" alt="Lint filter step 1" />
+              <div class="step-text">
+                <h4>Step 1</h4>
+                <p>乾燥機の運転を止め、フタ（カバー）を押しボタンで開けます。</p>
+                <p>Stop the dryer and open the cover using the push button.</p>
+                <p>停止運轉，按下按鍵打開外蓋。</p>
+              </div>
+            </div>
+            <div class="lint-step">
+              <span class="step-index">2</span>
+              <img src="images/Photo placeholder 2.png" alt="Lint filter step 2" />
+              <div class="step-text">
+                <h4>Step 2</h4>
+                <p>フィルター枠を真上に引き抜く。</p>
+                <p>Pull out the lint filter assembly straight up.</p>
+                <p>將濾網組直向上拔出。</p>
+              </div>
+            </div>
+            <div class="lint-step">
+              <span class="step-index">3</span>
+              <img src="images/Photo placeholder 3.png" alt="Lint filter step 3" />
+              <div class="step-text">
+                <h4>Step 3</h4>
+                <p>柔らかいブラシ／掃除機で、フィルター網と内部の糸くずを取り除く。</p>
+                <p>Remove lint from the mesh and inside with a soft brush or vacuum.</p>
+                <p>以軟刷或吸塵器清除濾網與內部的棉絮。</p>
+              </div>
+            </div>
+            <div class="lint-step">
+              <span class="step-index">4</span>
+              <img src="images/Photo placeholder 4.png" alt="Lint filter step 4" />
+              <div class="step-text">
+                <h4>Step 4</h4>
+                <p>水洗いする場合は完全に乾かしてから戻してください。（先の鋭い道具は使わない。）</p>
+                <p>If you wash it with water, dry it completely before reinstalling. Do not use sharp tools.</p>
+                <p>若以清水清洗，請完全晾乾後再裝回，勿使用尖銳工具刮除。</p>
+              </div>
+            </div>
+            <div class="lint-step">
+              <span class="step-index">5</span>
+              <img src="images/Photo placeholder 5.png" alt="Lint filter step 5" />
+              <div class="step-text">
+                <h4>Step 5</h4>
+                <p>きれいになったフィルターを戻し、フタ（カバー）を閉める。</p>
+                <p>Reassemble the clean filter, place it back, and close the cover.</p>
+                <p>將清潔後的濾網裝回並闔上外蓋。</p>
+              </div>
+            </div>
+          </div>
+          <div class="appliance-content">
+            <h3 class="procedure-heading">糸くずフィルターの清掃 ・ Clean the Lint Filter ・ 棉絮濾網清潔</h3>
+            <p class="procedure-note">フィルター枠を「カチッ」と音がするまで確実にセットできているか確認。注意：正しく装着されていないと、エラーや乾燥不良の原因になります。</p>
           </div>
         </div>
         <div class="appliance-card">
@@ -1859,16 +1987,3 @@
     </footer>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
