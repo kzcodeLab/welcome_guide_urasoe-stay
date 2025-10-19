@@ -690,9 +690,11 @@
       }
 
       .appliance-photos.lint-steps {
-        width: min(100%, 360px);
+        width: 100%;
         justify-items: stretch;
         gap: 0.9rem;
+        align-items: stretch;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       }
 
       .lint-step {
@@ -746,18 +748,20 @@
         line-height: 1.5;
       }
 
-      .lint-guide .appliance-content {
-        order: 0;
+      .lint-header {
+        display: grid;
+        gap: 0.5rem;
+        text-align: left;
       }
 
-      @media (max-width: 640px) {
-        .appliance-card.lint-guide {
-          grid-template-columns: 1fr !important;
-        }
-        .lint-guide .appliance-content {
-          order: -1;
-        }
+      .procedure-heading {
+        color: var(--accent);
       }
+
+      .appliance-card.lint-guide {
+        grid-template-columns: 1fr;
+      }
+
 
       .appliance-photos img {
         width: min(100%, 360px);
@@ -929,17 +933,17 @@
               <h3>駐車場 ・ Parking ・ 停車</h3>
               <div class="lang-block">
                 <p>
-                  建物前には、小型車3台分・大型車3台分の駐車スペースがございます。駐車の際は、低速でゆっくりと操作し、壁やフェンスに接触しないようご注意ください。
+                  建物前には、小型車3台分・大型車2台分の駐車スペースがございます。駐車の際は、低速でゆっくりと操作し、壁やフェンスに接触しないようご注意ください。
                 </p>
               </div>
               <div class="lang-block">
                 <p>
-                  There are parking spaces for 3 small cars and 3 large cars in front of the building. When parking, please drive slowly and take care not to touch the walls or fences.
+                  There are parking spaces for 3 small cars and 2 large cars in front of the building. When parking, please drive slowly and take care not to touch the walls or fences.
                 </p>
               </div>
               <div class="lang-block">
                 <p>
-                  本建築前方設有小型車 3 個車位、 大型車 3 個車位。停車時請低速慢行，並注意避免碰觸牆面或圍欄。
+                  本建築前方設有小型車 3 個車位、 大型車 2 個車位。停車時請低速慢行，並注意避免碰觸牆面或圍欄。
                 </p>
               </div>
             </div>
@@ -982,13 +986,13 @@
             <div class="travel-card">
               <h3>タクシー</h3>
               <div class="lang-block">
-                <p>那覇空港国内線ターミナルから約20〜25分、料金の目安は2,200〜2,800円です。</p>
+                <p>那覇空港国内線ターミナルから約20分、料金の目安は2,200〜2,800円です。</p>
               </div>
               <div class="lang-block">
-                <p>Ride from the Domestic Terminal takes about 20〜25 minutes. Fare estimate: JPY 2,200〜2,800.</p>
+                <p>Ride from the Domestic Terminal takes about 20 minutes. Fare estimate: JPY 2,200〜2,800.</p>
               </div>
               <div class="lang-block">
-                <p>從國內線航廈搭乘計程車約20～25分鐘，車資約2,200～2,800日圓。</p>
+                <p>從國內線航廈搭乘計程車約20分鐘，車資約2,200～2,800日圓。</p>
               </div>
             </div>
           </div>
@@ -1024,17 +1028,17 @@
             </div>
             <div class="lang-block">
               <p>
-                国内線ターミナル3番のりばから120番（名護西空港線）に乗車し、「勢理客」で下車します（所要約20〜35分・渋滞状況により変動）。バス停から宿（浦添市勢理客3-1-41）までは徒歩約5分です。
+                国内線ターミナル3番のりばから120番（名護西空港線）に乗車し、「勢理客」で下車します（所要約30分・渋滞状況により変動）。バス停から宿（浦添市勢理客3-1-41）までは徒歩約5分です。
               </p>
             </div>
             <div class="lang-block">
               <p>
-                Board Route 120 (Nago West Airport Line) at Domestic Terminal stop #3, ride to “Jicchaku” (approx. 20〜35 min depending on traffic). Walk about 5 minutes to 3-1-41 Jicchaku.
+                Board Route 120 (Nago West Airport Line) at Domestic Terminal stop #3, ride to “Jicchaku” (approx. 30 min depending on traffic). Walk about 5 minutes to 3-1-41 Jicchaku.
               </p>
             </div>
             <div class="lang-block">
               <p>
-                在國內線航廈3號乘車處搭乘120路（名護西機場線），於「實着」站下車（約20～35分鐘，視交通情況而定）。從公車站步行約5分鐘即可抵達浦添市勢理客3-1-41。
+                在國內線航廈3號乘車處搭乘120路（名護西機場線），於「實着」站下車（約30分鐘，視交通情況而定）。從公車站步行約5分鐘即可抵達浦添市勢理客3-1-41。
               </p>
             </div>
           </div>
@@ -1050,9 +1054,9 @@
               </div>
               <div class="route-step">
                 <h4>乗車 / On Board / 乘車</h4>
-                <p>「勢理客」で下車（約20〜35分・渋滞状況により変動）</p>
-                <p>Get off at “Jicchaku” (20〜35 min depending on traffic)</p>
-                <p>於「實着」下車（約20～35分鐘，視交通情況而定）</p>
+                <p>「勢理客」で下車（約30分・渋滞状況により変動）</p>
+                <p>Get off at “Jicchaku” (30 min depending on traffic)</p>
+                <p>於「實着」下車（約30分鐘，視交通情況而定）</p>
               </div>
               <div class="route-step">
                 <h4>徒歩 / Walk / 步行</h4>
@@ -1481,7 +1485,7 @@
               </p>
               <p>陶器類： 茶碗・皿・花びん・土鍋 など</p>
               <p>注意：プラスチック製品は可燃ごみとして出してください。</p>
-              <p>ペットボトルは中身を空にして軽くすすぎ、キャップ・ラベルは可燃ごみへ。可能であればつぶしてまとめてください。</p>
+              <p style="color: red">ペットボトルは中身を空にして軽くすすぎ、キャップ・ラベルは可燃ごみへ。可能であればつぶしてまとめてください。</p>
             </div>
             <div class="lang-block">
               <p>Categories: Metals / Glass &amp; Bottles / Ceramics / Others (small appliances, etc.)</p>
@@ -1491,7 +1495,7 @@
               </p>
               <p>Ceramics: bowls, plates, vases, earthen pots, etc.</p>
               <p>Note: Please dispose of plastic items as burnable waste.</p>
-              <p>PET bottles: Empty and rinse lightly, remove caps and labels (burnable waste). Crush bottles if possible and bundle them.</p>
+              <p style="color: red">PET bottles: Empty and rinse lightly, remove caps and labels (burnable waste). Crush bottles if possible and bundle them.</p>
             </div>
             <div class="lang-block">
               <p>對象： 金屬類／玻璃・瓶罐類／陶瓷類／其他（小型家電等）</p>
@@ -1501,31 +1505,10 @@
               </p>
               <p>陶瓷類： 碗、盤、花瓶、土鍋等。</p>
               <p>注意： 塑膠製品請作為可燃垃圾處理。</p>
-              <p>PET 瓶： 請倒空並簡單沖洗，瓶蓋與標籤請丟入可燃垃圾，可的話請壓扁後集中放入垃圾桶。</p>
+              <p style="color: red">PET 瓶： 請倒空並簡單沖洗，瓶蓋與標籤請丟入可燃垃圾，可的話請壓扁後集中放入垃圾桶。</p>
             </div>
           </div>
 
-          <div class="waste-card">
-            <h3>有害・危険ゴミ ・ Hazardous ・ 有害垃圾</h3>
-            <div class="waste-illustration short">
-              <img src="images/Hazardous.png" alt="Hazardous waste illustration" />
-            </div>
-            <div class="lang-block">
-              <p>危険ごみ</p>
-              <p>対象： 蛍光灯／水銀使用製品（体温計など）／乾電池（小型充電池を除く）／使い捨てライター・スプレー缶</p>
-              <p>こちらは、他のゴミと混ぜずに、ゴミ箱の近くに置いてください。</p>
-            </div>
-            <div class="lang-block">
-              <p>Hazardous Waste</p>
-              <p>Categories: Fluorescent lamps / Mercury products (e.g., thermometers) / Dry batteries (excl. small rechargeables) / Disposable lighters &amp; spray cans</p>
-              <p>Please keep these items separate and place them near the trash bin, not mixed with other waste.</p>
-            </div>
-            <div class="lang-block">
-              <p>危險垃圾</p>
-              <p>對象： 螢光燈／含水銀製品（如體溫計）／乾電池（不含小型充電電池）／一次性打火機與噴霧罐</p>
-              <p>請勿與其他垃圾混合，請分開放置在垃圾桶附近。</p>
-            </div>
-          </div>
         </div>
       </section>
       <section id="appliance">
@@ -1575,25 +1558,31 @@
             <div class="appliance-content">
               <h3>お風呂モニター ・ Bath Control ・ 浴室控制面板</h3>
               <ul>
-                <li>自動で湯はり：ふろ自動 → 自動停止まで待つ（アナウンス音あり）。</li>
-                <li>ぬるい時：追いだき（温め直し）。</li>
-                <li>もう少し増やす：たし湯 ／ 薄める：たし水。</li>
-                <li>温度を変える：表示が「給湯」になっている時に ▲/▼。浴室側を優先したいときは「優先」。</li>
-                <li>呼び出し：呼出でキッチン側にチャイム通知。</li>
+                <li><strong>浴槽にお湯を貯める</strong></li>
+                <li>1［運転］を押す（電源オン）。</li>
+                <li>2［ふろ自動］を押す。</li>
+                <li>※排水栓（栓）が閉まっているか確認してください。</li>
+                <li><strong>温度の調整</strong></li>
+                <li>浴槽にためるお湯：黒いモニターの 「ふろ」 の △／▽ で設定温度を上下。</li>
+                <li>シャワー（蛇口）のお湯：黒いモニターの 「給湯」 の △／▽ で温度調整。</li>
               </ul>
               <ul>
-                <li>Auto fill: Press Auto Fill Bath; it stops automatically.</li>
-                <li>Too cool? Press Reheat.</li>
-                <li>Need more water? Add Hot Water / Cool down? Add Cold Water.</li>
-                <li>Change temp: When “Hot-water temp” is shown, use ▲/▼. Press Priority to control from this panel.</li>
-                <li>Call: Call button rings the kitchen unit.</li>
+                <li><strong>Fill the Bathtub (Auto)</strong></li>
+                <li>1 Press [運転] (Power/Start) to turn it on.</li>
+                <li>2 Press [ふろ自動] (Auto Fill Bath).</li>
+                <li>※Make sure the drain stopper is closed.</li>
+                <li><strong>Temperature Settings</strong></li>
+                <li>Bathwater (for the tub): On the black panel, use “ふろ” (Bath) ▲/▼ to set the temperature.</li>
+                <li>Shower/Tap hot water: On the black panel, use “給湯” (Hot-water) ▲/▼ to adjust the temperature.</li>
               </ul>
               <ul>
-                <li>自動放水：按「自動放澡」，滿水後會自動停止。</li>
-                <li>水溫偏低：按「追焚」加熱。</li>
-                <li>想加多一點：按「加熱水」／想稀釋：按「加冷水」。</li>
-                <li>調整溫度：顯示「給湯」時用 ▲/▼，需要以浴室面板為主時按「優先」。</li>
-                <li>呼叫：按「呼叫」，廚房面板會響鈴。</li>
+                <li><strong>自動放滿浴缸</strong></li>
+                <li>1 按下【運轉】開機。</li>
+                <li>2 按下【自動放澡（ふろ自動）】。</li>
+                <li>※請確認排水栓已確實關閉。</li>
+                <li><strong>溫度調整</strong></li>
+                <li>浴缸用水：在黑色面板的「ふろ」以 ▲／▼ 調整設定溫度。</li>
+                <li>淋浴／水龍頭熱水：在黑色面板的「給湯」以 ▲／▼ 調整溫度。</li>
               </ul>
             </div>
           </div>
@@ -1687,6 +1676,10 @@
             </div>
           </div>
         <div class="appliance-card lint-guide">
+          <div class="lint-header">
+            <h3 class="procedure-heading">糸くずフィルターの清掃 ・ Clean the Lint Filter ・ 棉絮濾網清潔</h3>
+            <p class="procedure-note">フィルター枠を「カチッ」と音がするまで確実にセットできているか確認。注意：正しく装着されていないと、エラーや乾燥不良の原因になります。</p>
+          </div>
           <div class="appliance-photos lint-steps">
             <div class="lint-step">
               <span class="step-index">1</span>
@@ -1738,10 +1731,6 @@
                 <p>將清潔後的濾網裝回並闔上外蓋。</p>
               </div>
             </div>
-          </div>
-          <div class="appliance-content">
-            <h3 class="procedure-heading">糸くずフィルターの清掃 ・ Clean the Lint Filter ・ 棉絮濾網清潔</h3>
-            <p class="procedure-note">フィルター枠を「カチッ」と音がするまで確実にセットできているか確認。注意：正しく装着されていないと、エラーや乾燥不良の原因になります。</p>
           </div>
         </div>
         <div class="appliance-card">
@@ -1836,23 +1825,17 @@
             </div>
             <div class="appliance-content">
               <h3>ガスコンロ ・ Gas Stove ・ 瓦斯爐</h3>
-                            <ul>
-                <li>換気扇をONにしてから操作します。</li>
-                <li>使う口のつまみを押し込み、「カチカチ」と音がしたあと点火します。</li>
-                <li>炎が鍋底からはみ出さない程度に火力を調整します。</li>
-                <li>使用後はつまみを押して元に戻し、火を完全に消してください。</li>
+              <ul>
+                <li>利用する場合、ボタンを押す。</li>
+                <li>切る場合は、もう一度押してください</li>
               </ul>
               <ul>
-                <li>Turn ON the range hood (vent) before operating.</li>
-                <li>Push in the knob for the burner you'll use; after the clicking sound, the flame will ignite.</li>
-                <li>Adjust the flame so it does not extend beyond the bottom of the pan.</li>
-                <li>After use, push and turn the knob back to OFF and make sure the flame is completely out.</li>
+                <li>To use it, press the button.</li>
+                <li>if you want to turn off,please push it again.</li>
               </ul>
               <ul>
-                <li>操作前先打開排油煙機。</li>
-                <li>按下欲使用的爐口旋鈕，聽到喀喀聲後即可點火。</li>
-                <li>調整火力，使火焰不要超出鍋底邊緣。</li>
-                <li>使用後請將旋鈕按下並轉回關閉，確認火焰完全熄滅。</li>
+                <li>使用時按扭往下按，</li>
+                <li>关闭时再往下按，按扭便会弹上来　</li>
               </ul>
             </div>
           </div>
